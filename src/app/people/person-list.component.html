@@ -1,6 +1,33 @@
 <!-- EJERCICIO 5 - INTERFAZ
 Definir una interfaz "IPerson", que contenga los datos necesarios. -->
-<div class='panel panel-primary'>
-    LLEGASTE POR FIN!!!!
+
+<div class='table-responsive'>
+    <table class='table' *ngIf='filteredPeople && filteredPeople.length'>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Edad</th>
+                <th>Humor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let person of filteredPeople">
+                <td>{{ person.ID}}</td>
+                <td>{{ person.Nombre }}</td>
+                <td>{{ person.Direccion}}</td>
+                <td>{{ person.Edad}}</td>
+                <td>{{ person.Humor}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+<div *ngIf="show">
+    VER
+</div>
+
+
+
+
 
