@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from "@angular/core";
+import { Component, Input, OnInit, OnChanges, SimpleChanges, Output, EventEmitter } from "@angular/core";
 
 @Component({
     selector: 'pv-person-mood',
@@ -6,6 +6,8 @@ import { Component, Input, OnInit, OnChanges, SimpleChanges } from "@angular/cor
 })
 export class PersonMoodComponent implements OnInit, OnChanges {
     @Input() moodLevel: number;
+    @Output() 
+    getUrl: EventEmitter<string> =  new EventEmitter<string>()
     imageUrl: string;
 
     ngOnInit(): void {
@@ -31,6 +33,10 @@ export class PersonMoodComponent implements OnInit, OnChanges {
                 this.imageUrl = 'assets/images/pv-person-mood/question.jpg';
                 break;
         }
+    }
+
+    onImageClick() : void{
+        this.getUrl.emit(this.imageUrl);
     }
 
 }

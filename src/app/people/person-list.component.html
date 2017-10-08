@@ -21,7 +21,7 @@ Definir una interfaz "IPerson", que contenga los datos necesarios. -->
                 <td>{{ person.Direccion}}</td>
                 <td>{{ person.Edad}}</td>
                 <td>
-                    <pv-person-mood [moodLevel]="person.Humor"></pv-person-mood>
+                    <pv-person-mood [moodLevel]="person.Humor" (getUrl)="notifyUrl($event)"></pv-person-mood>
                 </td>
             </tr>
         </tbody>

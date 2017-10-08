@@ -39,4 +39,8 @@ export class PersonListComponent implements OnInit {
             this.filteredPeople = this.people;
         }
     }
+
+    notifyUrl(url: string):void{
+        alert(url);
+    }
 }
