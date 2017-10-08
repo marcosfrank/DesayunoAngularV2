@@ -4,6 +4,7 @@ import { PersonsService } from './person.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { PersonMoodComponent } from './shared/person-mood.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { CommonModule } from '@angular/common';
   ],
   declarations: [
     PersonListComponent,
+    PersonMoodComponent
   ],
   providers: [
     PersonsService

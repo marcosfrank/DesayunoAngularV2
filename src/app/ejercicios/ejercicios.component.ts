@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 export class EjerciciosComponent implements OnInit {
   title: string = 'Angular Application';
   fansQuantity: number = 2500;
-
+  
   ngOnInit(): void {
     
   }

@@ -1,6 +1,8 @@
 <!-- EJERCICIO 5 - INTERFAZ
 Definir una interfaz "IPerson", que contenga los datos necesarios. -->
-
+<div style="max-width:200px">
+    <input type="text" class="form-control" placeholder="Filtro" [(ngModel)]="filter" (ngModelChange)="performFilter()" />
+</div>
 <div class='table-responsive'>
     <table class='table' *ngIf='filteredPeople && filteredPeople.length'>
         <thead>
@@ -18,13 +20,12 @@ Definir una interfaz "IPerson", que contenga los datos necesarios. -->
                 <td>{{ person.Nombre }}</td>
                 <td>{{ person.Direccion}}</td>
                 <td>{{ person.Edad}}</td>
-                <td>{{ person.Humor}}</td>
+                <td>
+                    <pv-person-mood [moodLevel]="person.Humor"></pv-person-mood>
+                </td>
             </tr>
         </tbody>
     </table>
-</div>
-<div *ngIf="show">
-    VER
 </div>
 
 
