@@ -1,13 +1,3 @@
-//NESTED COMPONENTS
-//Generar que el atributo moodLevel sea de INPUT
-
-//Llamar a este componenete desde la lista. Enviarle el valor del Humor con PropertyBinding.
-//Probar si funciona!!
-
-//Luego consumir la variable Output desde el componente padre. 
-//      Nos alcanza con mostrar su contenido en un alert.
-//      ¿Descubrimos cuando se lanza este evento?
-
 import { Component, OnInit, OnChanges, 
             SimpleChanges, Output, EventEmitter } from "@angular/core";
 
