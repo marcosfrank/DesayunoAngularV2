@@ -1,0 +1,41 @@
+<!-- EJERCICIO 5 ROUTING - Agreguemos al ruteo con el path "person/list" este componente.
+                           Verifiquemos que este componente esta EXPORTADO en el modulo.
+                           Agreguemos tambien una regla de ruteo para el inicio y
+                           una wildcard para que nos lleve al Welcome en ambos casos.
+                           -->
+<!-- EJERCICIO 6 - INTERFAZ Definir una interfaz "IPerson", que contenga los datos necesarios. -->
+<!-- EJERCICIO 7 - Inyeccion de dependencias. Debemos inyectar el servicio person.service.
+                   ¿En que lugar debemos hacerlo? ¿Funciona? ¿Nos falta algo mas?-->
+<!-- EJERCICIO 8 - Generar un componente que nos permita mejorar ese humor que estamos mostrando.
+                    Vamos a usar EMOJIS :). Manos a la Obra. Abri el archivo Shared/person-mood.component 
+                    y segui las instrucciones -->
+<div style="max-width:200px">
+    <input type="text" class="form-control" placeholder="Filtro" [(ngModel)]="filter" (ngModelChange)="performFilter()" />
+</div>
+<div class='table-responsive'>
+    <table class='table' *ngIf='filteredPeople && filteredPeople.length'>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Edad</th>
+                <th>Humor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let person of filteredPeople">
+                <td>{{ person.ID}}</td>
+                <td>{{ person.Nombre }}</td>
+                <td>{{ person.Direccion}}</td>
+                <td>{{ person.Edad}}</td>
+                <td>{{ person.Humor }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
