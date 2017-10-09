@@ -2,7 +2,7 @@ import { Component, Input, OnInit, OnChanges, SimpleChanges, Output, EventEmitte
 
 @Component({
     selector: 'pv-person-mood',
-    templateUrl: 'pv-person-mood.html'
+    templateUrl: 'person-mood.component.html'
 })
 export class PersonMoodComponent implements OnInit, OnChanges {
     @Input() moodLevel: number;

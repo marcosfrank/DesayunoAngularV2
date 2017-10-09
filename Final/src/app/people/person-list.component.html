@@ -1,5 +1,16 @@
-<!-- EJERCICIO 5 - INTERFAZ
-Definir una interfaz "IPerson", que contenga los datos necesarios. -->
+<!-- EJERCICIO 4 -> ROUTING Agreguemos al ruteo una regla que con el path "person/list" 
+                            y resuelva este componente. Verificar que este componente esta
+                            EXPORTADO en el modulo.
+                            Agreguemos tambien una regla de ruteo para el inicio de la aplicacion y
+                            una wildcard para que nos lleve al Welcome en ambos casos.
+                -->
+<!-- EJERCICIO 5 -> INTERFAZ Definir una interfaz "IPerson", que contenga los datos que mapeen el resultado de la API.
+                     http://personasapi.azurewebsites.net/api/personas/ -->
+<!-- EJERCICIO 6 -> INYECCION DE DEPENDENCIAS Debemos inyectar el servicio person.service.
+                   ¿En que lugar debemos hacerlo? ¿Funciona? ¿Nos falta algo mas?-->
+<!-- EJERCICIO 7 -> NESTED COMPONENTES Generar un componente que nos permita mejorar la forma en que 
+                    estamos mostrando el humor. Usemos EMOJIS :). Manos a la Obra. 
+                    Abri el archivo Shared/person-mood.component y segui las instrucciones -->
 <div style="max-width:200px">
     <input type="text" class="form-control" placeholder="Filtro" [(ngModel)]="filter" (ngModelChange)="performFilter()" />
 </div>
