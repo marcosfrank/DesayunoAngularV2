@@ -20,6 +20,12 @@ export class PersonsService {
             .catch(this.handleError);
     }
 
+    getById(personId:number): Observable<IPerson> {
+        return this._http.get<IPerson>(this._productUrl + personId.toString())
+            .do(data => console.log('All: ' + JSON.stringify(data)))
+            .catch(this.handleError);
+    }
+
 
     private handleError(err: HttpErrorResponse) {
         let errorMessage = '';

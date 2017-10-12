@@ -10,12 +10,10 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 //PEOPLE MODULE
 import { PersonModule } from "./people/person.module";
-import { PersonListComponent } from "./people/person-list.component";
 
 const appRoutes : Routes = [
   { path: 'welcome', component: WelcomeComponent},
   { path: 'ejercicios', component: EjerciciosComponent},
-  { path: 'people/list', component: PersonListComponent},
   { path: '', redirectTo:'welcome' ,pathMatch:'full'},
   { path: '**', redirectTo:'welcome' ,pathMatch:'full'},
 ];

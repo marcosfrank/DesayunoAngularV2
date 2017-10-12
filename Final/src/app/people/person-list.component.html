@@ -11,33 +11,51 @@
 <!-- EJERCICIO 7 -> NESTED COMPONENTES Generar un componente que nos permita mejorar la forma en que 
                     estamos mostrando el humor. Usemos EMOJIS :). Manos a la Obra. 
                     Abri el archivo Shared/person-mood.component y segui las instrucciones -->
-<div style="max-width:200px">
-    <input type="text" class="form-control" placeholder="Filtro" [(ngModel)]="filter" (ngModelChange)="performFilter()" />
+
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        Lista de Personas
+    </div>
+
+    <div class='panel-body'>
+        <div style="max-width:200px">
+            <input type="text" class="form-control" placeholder="Filtro" [(ngModel)]="filter" (ngModelChange)="performFilter()" />
+        </div>
+        <div class='table-responsive'>
+            <table class='table' *ngIf='filteredPeople && filteredPeople.length'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Direccion</th>
+                        <th>Edad</th>
+                        <th>Humor</th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let person of filteredPeople">
+                        <td>{{ person.ID}}</td>
+                        <td>{{ person.Nombre }}</td>
+                        <td>{{ person.Direccion}}</td>
+                        <td>{{ person.Edad}}</td>
+                        <td>
+                            <pv-person-mood [moodLevel]="person.Humor" (getUrl)="notifyUrl($event)"></pv-person-mood>
+                        </td>
+                        <td>
+                            <a [routerLink]="['./detail/',person.ID]" routerLinkActive="active">
+                                <i class='glyphicon glyphicon-info-sign'></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class='panel-footer'>
+    </div>
 </div>
-<div class='table-responsive'>
-    <table class='table' *ngIf='filteredPeople && filteredPeople.length'>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Direccion</th>
-                <th>Edad</th>
-                <th>Humor</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let person of filteredPeople">
-                <td>{{ person.ID}}</td>
-                <td>{{ person.Nombre }}</td>
-                <td>{{ person.Direccion}}</td>
-                <td>{{ person.Edad}}</td>
-                <td>
-                    <pv-person-mood [moodLevel]="person.Humor" (getUrl)="notifyUrl($event)"></pv-person-mood>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+
 
 
 

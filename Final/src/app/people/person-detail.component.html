@@ -1,0 +1,54 @@
+<div class='panel panel-primary' *ngIf="person">
+    <div class='panel-heading'>
+        Detalle de {{person.Nombre}}
+    </div>
+
+    <div class='panel-body' >
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>ID:</div>
+                    <div class='col-md-6'>{{person.ID}}</div>
+                </div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Nombre:</div>
+                    <div class='col-md-6'>{{person.Nombre}}</div>
+                </div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Direccion:</div>
+                    <div class='col-md-6'>{{person.Direccion}}</div>
+                </div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Edad:</div>
+                    <div class='col-md-6'>{{person.Edad}}</div>
+                </div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Humor:</div>
+                    <div class='col-md-6'><pv-person-mood [moodLevel]="person.Humor"></pv-person-mood></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)="back()">
+            <i class='glyphicon glyphicon-chevron-left'></i> Volver a Productos
+        </a>
+    </div>
+</div>
