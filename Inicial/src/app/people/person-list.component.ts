@@ -13,11 +13,26 @@ export class PersonListComponent implements OnInit {
         
     }
     ngOnInit(): void {
-        
+        // this.{{SERVICIO}}.getAll()
+        // .subscribe(response => {
+        //         this.people = response;
+        //         this.filteredPeople = this.people;
+        //     },
+        //     error => console.log("Ha surgido un error." + error)
+        // ); 
     }
 
     performFilter(): void {
-        //Esta funcion se encarga de generar el filtro de la grilla.
+        // if(this.filter!== ""){
+        //     let filterBy = this.filter.toLocaleLowerCase();
+        //     this.filteredPeople =  this.people.filter((person: IPerson) =>
+        //           person.Nombre.toLocaleLowerCase().indexOf(filterBy) !== -1 ||
+        //           person.Direccion.toLocaleLowerCase().indexOf(filterBy) !== -1 ||
+        //           person.Edad.toString().indexOf(filterBy) !== -1);
+        // }else{
+        //     this.filteredPeople = this.people;
+        // }
+        
     }
 
 }

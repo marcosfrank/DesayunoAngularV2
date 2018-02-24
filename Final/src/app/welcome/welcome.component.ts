@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-
+  title:string;
   constructor() { }
 
   ngOnInit() {
+    this.title = "Desayuno de Angular";
   }
 
 }

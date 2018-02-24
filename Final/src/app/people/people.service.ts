@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 import { IPerson } from './person';
 
 @Injectable()
-export class PersonsService {
+export class PeopleService {
     private _productUrl = 'http://personasapi.azurewebsites.net/api/personas/';
 
     constructor(private _http: HttpClient) { }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PersonListComponent } from './person-list.component';
-import { PersonsService } from './person.service';
+import { PeopleService } from './people.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -26,7 +26,7 @@ const routes : Routes = [
     PersonDetailComponent
   ],
   providers: [
-    PersonsService
+    PeopleService
   ],
   exports: [
     PersonListComponent

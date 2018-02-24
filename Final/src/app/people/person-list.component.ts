@@ -1,6 +1,6 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '../../../node_modules/@angular/core';
 import { IPerson } from './person';
-import { PersonsService } from './person.service';
+import { PeopleService } from './people.service';
 
 @Component({
     templateUrl: './person-list.component.html'
@@ -10,7 +10,7 @@ export class PersonListComponent implements OnInit {
     public filteredPeople: IPerson[];
     people: IPerson[] = [];
 
-    constructor(private _peopleService: PersonsService) {
+    constructor(private _peopleService: PeopleService) {
 
     }
     ngOnInit(): void {
@@ -23,10 +23,6 @@ export class PersonListComponent implements OnInit {
             );
     }
 
-
-    onRatingClicked(message: string): void {
-        alert(message);
-    }
 
     performFilter(): void {
         if(this.filter!== ""){
