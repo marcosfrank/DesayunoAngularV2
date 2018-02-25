@@ -26,6 +26,14 @@ export class PeopleService {
             .catch(this.handleError);
     }
 
+    addPerson (person: IPerson): Observable<IPerson> {
+        return this._http.post<IPerson>(this._productUrl, person)
+        .do(data => console.log('Done: ' + JSON.stringify(data)))
+        .catch(
+            this.handleError
+        );
+      }
+
 
     private handleError(err: HttpErrorResponse) {
         let errorMessage = '';

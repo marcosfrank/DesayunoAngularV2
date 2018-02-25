@@ -7,10 +7,12 @@ import { CommonModule } from '@angular/common';
 import { PersonMoodComponent } from './shared/person-mood.component';
 import { PersonDetailComponent } from './person-detail.component';
 import { RouterModule, Routes } from '@angular/router';
+import { PersonAddComponent } from './person-add.component';
 
 const routes : Routes = [
     { path: 'people', component: PersonListComponent},
-    { path: 'people/detail/:id', component: PersonDetailComponent}
+    { path: 'people/detail/:id', component: PersonDetailComponent},
+    { path: 'people/add', component: PersonAddComponent},
 ];
 
 @NgModule({
@@ -23,7 +25,8 @@ const routes : Routes = [
   declarations: [
     PersonListComponent,
     PersonMoodComponent,
-    PersonDetailComponent
+    PersonDetailComponent,
+    PersonAddComponent
   ],
   providers: [
     PeopleService
