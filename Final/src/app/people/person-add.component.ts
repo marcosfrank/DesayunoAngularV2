@@ -1,38 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { IPerson } from "./person";
 import { PeopleService } from "./people.service";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-person-add',
   templateUrl: './person-add.component.html',
   styleUrls: ['./person-add.component.css']
 })
 export class PersonAddComponent implements OnInit {
-  
-  constructor(private _peopleService:PeopleService) { }
+  person:IPerson;
+  constructor(private _peopleService:PeopleService,
+              private _router:Router) { }
 
   ngOnInit() {
+    this.person = new IPerson();
   }
 
   save():void {
-    var person:IPerson = {
-      ID: 0,
-      Nombre: "Lucas García",
-      Direccion: "Av. Pellegrini 182",
-      Edad:15,
-      Humor:6
-    };
-   
-    this._peopleService.addPerson(person)
+    this._peopleService.addPerson(this.person)
       .subscribe(res => {
         console.log(res);
-        alert("exito");
+        alert("Has grabado una persona con exito");
+        this.back();
       }, (err) => {
-        alert("error");
+        alert("Ha surgido un error. Chequear la consola");
         console.log(err);
       }
     );
-    
+  }
+
+  back() : void {
+    this._router.navigate(['/people']);
   }
 
 }

@@ -1,4 +1,4 @@
-export interface IPerson {
+export class IPerson {
     ID: number;
     Nombre: string;
     Direccion: string;
