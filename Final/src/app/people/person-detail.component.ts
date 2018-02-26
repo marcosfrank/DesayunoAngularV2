@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PeopleService } from './people.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IPerson } from './person';
+import { Person } from './person';
 
 @Component({
   selector: 'app-person-detail',
@@ -10,7 +10,7 @@ import { IPerson } from './person';
 })
 export class PersonDetailComponent implements OnInit {
   @Input() personId;
-  person : IPerson;
+  person : Person;
   constructor(private _personService: PeopleService,
               private _activatedRoute: ActivatedRoute,
               private _router : Router) 

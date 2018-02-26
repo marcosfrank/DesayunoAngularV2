@@ -6,7 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 
-import { IPerson } from './person';
+import { Person } from './person';
 
 @Injectable()
 export class PeopleService {
@@ -14,20 +14,20 @@ export class PeopleService {
 
     constructor(private _http: HttpClient) { }
 
-    getAll(): Observable<IPerson[]> {
-        return this._http.get<IPerson[]>(this._productUrl)
+    getAll(): Observable<Person[]> {
+        return this._http.get<Person[]>(this._productUrl)
             .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
 
-    getById(personId:number): Observable<IPerson> {
-        return this._http.get<IPerson>(this._productUrl + personId.toString())
+    getById(personId:number): Observable<Person> {
+        return this._http.get<Person>(this._productUrl + personId.toString())
             .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
 
-    addPerson (person: IPerson): Observable<IPerson> {
-        return this._http.post<IPerson>(this._productUrl, person)
+    addPerson (person: Person): Observable<Person> {
+        return this._http.post<Person>(this._productUrl, person)
         .do(data => console.log('Done: ' + JSON.stringify(data)))
         .catch(
             this.handleError

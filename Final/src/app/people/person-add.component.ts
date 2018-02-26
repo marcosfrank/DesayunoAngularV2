@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IPerson } from "./person";
+import { Person } from "./person";
 import { PeopleService } from "./people.service";
 import { Router } from "@angular/router";
 
@@ -8,12 +8,12 @@ import { Router } from "@angular/router";
   styleUrls: ['./person-add.component.css']
 })
 export class PersonAddComponent implements OnInit {
-  person:IPerson;
+  person:Person;
   constructor(private _peopleService:PeopleService,
               private _router:Router) { }
 
   ngOnInit() {
-    this.person = new IPerson();
+    this.person = new Person();
   }
 
   save():void {

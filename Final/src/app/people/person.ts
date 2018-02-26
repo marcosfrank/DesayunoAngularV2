@@ -1,4 +1,4 @@
-export class IPerson {
+export class Person {
     ID: number;
     Nombre: string;
     Direccion: string;

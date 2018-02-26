@@ -2,8 +2,8 @@ import { Component, OnInit, OnChanges,
             SimpleChanges, Output, EventEmitter } from "@angular/core";
 
 @Component({
-    selector: 'pv-person-mood',
-    templateUrl: 'person-mood.component.html'
+    templateUrl: 'person-mood.component.html',
+    styleUrls: ['person-mood.component.css']
 })
 export class PersonMoodComponent implements OnInit, OnChanges {
     moodLevel: number;

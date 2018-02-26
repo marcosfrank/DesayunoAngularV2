@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges, SimpleChanges } from '../../../node_modules/@angular/core';
-import { IPerson } from './person';
+import { Person } from './person';
 import { PeopleService } from './people.service';
 
 @Component({
@@ -7,8 +7,8 @@ import { PeopleService } from './people.service';
 })
 export class PersonListComponent implements OnInit {
     filter: string = "";
-    public filteredPeople: IPerson[];
-    people: IPerson[] = [];
+    public filteredPeople: Person[];
+    people: Person[] = [];
 
     constructor(private _peopleService: PeopleService) {
 
@@ -27,7 +27,7 @@ export class PersonListComponent implements OnInit {
     performFilter(): void {
         if(this.filter!== ""){
             let filterBy = this.filter.toLocaleLowerCase();
-            this.filteredPeople =  this.people.filter((person: IPerson) =>
+            this.filteredPeople =  this.people.filter((person: Person) =>
                   person.Nombre.toLocaleLowerCase().indexOf(filterBy) !== -1 ||
                   person.Direccion.toLocaleLowerCase().indexOf(filterBy) !== -1 ||
                   person.Edad.toString().indexOf(filterBy) !== -1);
