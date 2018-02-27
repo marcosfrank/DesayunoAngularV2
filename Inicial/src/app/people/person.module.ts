@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { PersonListComponent } from './person-list.component';
-import { PeopleService } from './person.service';
+import { PeopleService } from './people.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { PersonAddComponent } from './person-add.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ],
   declarations: [
-    PersonListComponent
+    PersonListComponent,
+    PersonAddComponent
   ],
   providers: [
     //¿Que falta aca?

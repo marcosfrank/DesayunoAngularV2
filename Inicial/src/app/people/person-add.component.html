@@ -1,0 +1,52 @@
+<form>
+  <div class='panel panel-primary'>
+    <div class='panel-heading'>
+      Agregar una persona
+    </div>
+    <div class='panel-body' >
+      <div class="row">
+        <div class="col-lg-6  ">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input name="nombre" type="text" class="form-control" [(ngModel)]="person.Nombre" 
+                  required minlength="3" maxlength="50" pattern="^[A-zÁ-ú\s]+$">
+              </div>
+      
+              <div class="form-group">
+                <label for="direccion">Dirección</label>
+                <textarea name="direccion" rows="5" class="form-control" [(ngModel)]="person.Direccion"
+                  required minlength="10" maxlength="500" #direccionInput="ngModel"></textarea>
+                  <div [hidden]="direccionInput.valid || direccionInput.pristine" class="alert alert-danger">
+                    <div *ngIf="direccionInput.errors?.required">La dirección es requerida.</div>
+                    <div *ngIf="direccionInput.errors?.minlength">La dirección debe tener al menos 10 caracteres.</div>
+                  </div>
+              </div>
+      
+              <div class="form-group">
+                <label for="edad">Edad</label>
+                <input name="edad" type="number" class="form-control" [(ngModel)]="person.Edad"
+                  required min="0" max="99" pattern="^([0-9]|[1-9][0-9])$" #edadInput="ngModel">
+              </div>
+      
+              <div class="form-group">
+                <label for="humor">Humor</label>
+                <select name="humor" class="form-control" [(ngModel)]="person.Humor" required >
+                  <option value="-1">Triste</option>
+                  <option value="0">Mas o Menos</option>
+                  <option value="1">Feliz</option>
+                  <option value="6">Indeciso</option>
+                </select>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class='panel-footer'>
+      <button class='btn btn-default' (click)="back()">
+          <i class='glyphicon glyphicon-chevron-left'></i> Volver a Productos
+      </button>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+  
+  </div>
+</form>
+
