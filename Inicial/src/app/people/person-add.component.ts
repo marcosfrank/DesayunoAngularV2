@@ -4,7 +4,6 @@ import { PeopleService } from "./people.service";
 import { Router } from "@angular/router";
 
 @Component({
-  selector:'p-a',
   templateUrl: './person-add.component.html',
   styleUrls: ['./person-add.component.css']
 })

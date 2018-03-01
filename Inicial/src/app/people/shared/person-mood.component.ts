@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges,
             SimpleChanges, Output, EventEmitter } from "@angular/core";
 
 @Component({
+    selector:"app-person-mood",
     templateUrl: 'person-mood.component.html',
     styleUrls: ['person-mood.component.css']
 })
